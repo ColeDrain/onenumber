@@ -3,23 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>One Number</title>
-    <link href="/tailwind.css" rel="stylesheet">
+    <link href="./tailwind.css" rel="stylesheet">
+    <script src='https://c2c.cedarviewng.com/c2c/click2call.js'></script>
 </head>
 <body class="h-screen">
     <header class="text-gray-600 body-font -mt-4">
-        <div class="container mx-auto flex flex-wrap justify-between p-5 pt-2 md:flex-row items-center">
-            <a class="flex title-font font-medium items-center text-gray-900 mb-0 md:mb-0">
+        <div class="container flex justify-between items-center">
+            <a href="">
                 <img class="transform scale-50" src="img.png" alt="">
             </a>
-            <nav class="hidden sm:block md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+            <nav class="hidden sm:block">
                 <a href="" class="mr-5 hover:text-gray-900 cursor-pointer">Home</a>
                 <a class="hover:text-gray-900 cursor-pointer">About Us</a>
             </nav>
-            <a href="https://easydial.ng/onenumberdial" class="inline-flex items-center bg-white border-0 py-1 px-3 focus:outline-none font-bold hover:bg-gray-200 rounded text-base md:mt-0">Sign Up
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-            </a>
+
+            <div class="flex items-center">
+                <a href="https://easydial.ng/onenumberdial" class="hidden sm:inline-flex items-center bg-white border-0 py-1 px-3 focus:outline-none font-bold hover:bg-gray-200 rounded text-base md:mt-0">Sign Up
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+                <div class="px-3"></div>
+                <div class="flex">
+                    <button class="block" onclick='call()'>Call 019065400</button>
+                    <div class="px-3"></div>
+                    <button class="block" onclick='hangup()'>Hangup</button>
+                    <div id='target'></div>
+                </div>
+
+            </div>
         </div>
     </header>
     <!--Hero-->
@@ -133,5 +145,36 @@
     </span>
         </div>
     </footer>
+
+    <script>
+        let sippoUri = 'https://c2c.cedarviewng.com';
+        let target = document.getElementById('target');
+        let config = {
+            call: {
+                localMediaConstraints: {
+                    audio: true,
+                    video: false
+                },
+                remoteMediaTypes: {
+                    audio: true,
+                    video: false
+                }
+            }
+        }
+        let c2c = new Click2Call(sippoUri, target, config);
+        function call() {
+            const anonymousDomain = '@quobis';
+            const dest = '019065400'
+            c2c.register(anonymousDomain).then( () => {
+                c2c.call(dest).catch( (error) => {
+                    console.error('Error calling');
+                    console.error(error);
+                });
+            });
+        }
+        function hangup() {
+            c2c.hangup().then( () => c2c.deregister());
+        }
+    </script>
 </body>
 </html>
