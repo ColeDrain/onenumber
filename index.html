@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>One Number</title>
     <link href="./tailwind.css" rel="stylesheet">
-    <script src='https://c2c.cedarviewng.com/c2c/click2call.js'></script>
+    <script src='click2call.js'></script>
 </head>
 <body class="h-screen">
     <header class="text-gray-600 body-font -mt-4">
@@ -164,7 +164,7 @@
         let c2c = new Click2Call(sippoUri, target, config);
         function call() {
             const anonymousDomain = '@quobis';
-            const dest = '019065400'
+            const dest = '09066670543'
             c2c.register(anonymousDomain).then( () => {
                 c2c.call(dest).catch( (error) => {
                     console.error('Error calling');
