@@ -25,7 +25,7 @@
                 </a>
                 <div class="px-3"></div>
                 <div class="flex">
-                    <button class="block" onclick='call()'>Call 08112930018</button>
+                    <button class="block" onclick='call()'>Call 019065400</button>
                     <div class="px-3"></div>
                     <button class="block" onclick='hangup()'>Hangup</button>
                     <div id='target'></div>
@@ -164,7 +164,7 @@
         let c2c = new Click2Call(sippoUri, target, config);
         function call() {
             const anonymousDomain = '@quobis';
-            const dest = '08112930018'
+            const dest = '019065400'
             c2c.register(anonymousDomain).then( () => {
                 c2c.call(dest).catch( (error) => {
                     console.error('Error calling');
