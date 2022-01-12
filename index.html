@@ -1,180 +1,395 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <title>One Number</title>
-    <link href="./tailwind.css" rel="stylesheet">
+    <link href="./build.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap" rel="stylesheet" />
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
-<body class="h-screen">
-    <header class="text-gray-600 body-font -mt-4">
-        <div class="container flex justify-between items-center">
-            <a href="">
-                <img class="transform scale-50" src="img.png" alt="">
-            </a>
-            <nav class="hidden sm:block">
-                <a href="" class="mr-5 hover:text-gray-900 cursor-pointer">Home</a>
-                <a class="hover:text-gray-900 cursor-pointer">About Us</a>
-            </nav>
 
-            <div class="flex items-center">
-                <a href="https://easydial.ng/onenumberdial" class="hidden sm:inline-flex items-center bg-white border-0 py-1 px-3 focus:outline-none font-bold hover:bg-gray-200 rounded text-base md:mt-0">Sign Up
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
+<body class="relative">
+<div class="text-white relative">
+    <header class="bg-black font-nova sticky top-0 z-50">
+        <div class="flex items-center justify-between py-5 px-6 sm:px-12 md:px-16 max-w-7xl mx-auto">
+            <!-- left side -->
+            <div>
+                <!-- logo -->
+                <a href="." class="flex items-center space-x-2">
+                    <img class="h-10" src="logo.png" alt="">
+                    <h1 class="font-bold text-2xl">One Number</h1>
                 </a>
-                <div class="px-3"></div>
-                <div class="flex">
-                    <button class="block" onclick='call()'>Call 019065400</button>
-                    <div class="px-3"></div>
-                    <button class="block" onclick='hangup()'>Hangup</button>
-                    <div id='target'></div>
-                </div>
-
+            </div>
+            <!-- middle nav -->
+            <nav class="hidden md:flex items-center space-x-5">
+                <a href="#why" class="border-b-2 border-transparent hover:border-orange-400">Why One Number ?</a>
+                <a href="#numbersType" class="border-b-2 border-transparent hover:border-orange-400">Types of Numbers</a>
+                <a href="" class="border-b-2 border-transparent hover:border-orange-400">Pricing</a>
+            </nav>
+            <!-- Right nav -->
+            <div class="hidden md:flex text-center">
+                <!-- <nav class="flex space-x-3 text-xs">
+            <a href="">RESOURCES</a>
+            <a href="">CONTACT US</a>
+            <a href="">LOG IN</a>
+          </nav> -->
+                <a href="" class="bg-orange-600 hover:bg-opacity-90 px-3 py-1 font-bold">TRY FREE</a>
+            </div>
+            <div class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
             </div>
         </div>
     </header>
-    <!--Hero-->
-    <section class="text-gray-600 body-font">
-        <div class="container mx-auto flex px-10 py-24 md:flex-row flex-col items-center">
-            <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                <h1 class="title-font sm:text-4xl text-4xl mb-4 font-medium text-gray-900">One Number
-                    <br class="hidden lg:inline-block">Dial
-                </h1>
-                <p class="mb-8 leading-relaxed text-2xl">OneNumber.Africa aims to interconnect the whole world together, no matter where you are, all you need is a number to connect.</p>
-                <div class="flex justify-center">
-                    <a href="https://easydial.ng/onenumberdial" class="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-400 rounded text-lg">Sign Up</a>
-                </div>
-
-            </div>
-            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-                <img class="object-cover object-center rounded" alt="hero" src="img2.png">
+    <!-- Hero -->
+    <section class="text-gray-900 relative">
+        <div class="pt-14 px-6 sm:px-12 md:px-16 max-w-7xl mx-auto">
+            <h2 class="text-5xl text-center font-bold font-nova">Connect the world with one number.</h2>
+            <p class="text-center mt-10 max-w-3xl mx-auto text-lg font-nova">Monitor your ring time and record calls with one number dial. Because if it's not bringing in money, there's no need to 'shalaye'</p>
+            <div class="text-center mt-10">
+                <a href=""
+                   class="inline-block w-[200px] md:w-[300px] text-white bg-orange-600 hover:bg-opacity-90 px-2 py-[0.62rem] font-bold text-[1.2222rem] rounded shadow-md shadow-orange-600/25">Get
+                    Started Now</a>
             </div>
         </div>
     </section>
-    <!--Steps-->
-    <section class="text-gray-600 body-font">
-        <h1 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-10">Why OneNumber ?
-        </h1>
-        <div class="container px-5 py-24 mx-auto flex flex-wrap">
-            <div class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
-                <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                    <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+    <!-- Benefits -->
+    <section class="bg-blue-600 mt-20 font-nova scroll-mt-10" id="why">
+        <div class="max-w-7xl mx-auto px-6 py-20">
+            <p class="text-center text-[1.67rem] max-w-3xl mx-auto font-medium p-5">You’re a small business
+                owner, not an office manager. One Number helps you focus on your business, so you can do what
+                you’re good at..</p>
+            <div
+                    class="grid grid-cols-1 gap-6 px-16 sm:px-8 md:px-6 justify-center items-center md:grid-cols-3 mt-6">
+                <div
+                        class="text-center bg-gray-300 text-gray-800 py-6 px-2 rounded-md shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:bg-white">
+                    <h3 class="text-xl font-medium">Five Steps Ahead.</h3>
+                    <p>Monitor your ring time and record calls with one number dial. Because if it's not bringing in money, there's no need to 'shalaye'.</p>
                 </div>
-                <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-yellow-500 text-white relative z-10 title-font font-medium text-sm">1</div>
-                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                    <div class="flex-shrink-0 w-24 h-24 bg-yellow-100 text-yellow-500 rounded-full inline-flex items-center justify-center">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                        </svg>
-                    </div>
-                    <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                        <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">Five Steps Ahead</h2>
-                        <p class="leading-relaxed">Monitor your ring time and record calls with one number dial. Because if it's not bringing in money, there's no need to 'shalaye'.</p>
-                    </div>
+                <div
+                        class="text-center bg-gray-300 text-gray-800 py-6 px-2 rounded-md shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:bg-white">
+                    <h3 class="text-xl font-medium">One Number Dial.</h3>
+                    <p>Never miss business calls. Monitor your ring back time. Record your calls Get these and more with One Number dial.</p>
                 </div>
-            </div>
-            <div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
-                <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                    <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
-                </div>
-                <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-yellow-500 text-white relative z-10 title-font font-medium text-sm">2</div>
-                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                    <div class="flex-shrink-0 w-24 h-24 bg-yellow-100 text-yellow-500 rounded-full inline-flex items-center justify-center">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                        </svg>
-                    </div>
-                    <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                        <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">One Number Dial</h2>
-                        <p class="leading-relaxed">Never miss business calls. Monitor your ring back time. Record your calls Get these and more with One Number dial.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
-                <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                    <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
-                </div>
-                <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-yellow-500 text-white relative z-10 title-font font-medium text-sm">3</div>
-                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                    <div class="flex-shrink-0 w-24 h-24 bg-yellow-100 text-yellow-500 rounded-full inline-flex items-center justify-center">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
-                            <circle cx="12" cy="5" r="3"></circle>
-                            <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
-                        </svg>
-                    </div>
-                    <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                        <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">Never let any call go unhandled</h2>
-                        <p class="leading-relaxed">Get one number that connects to five other numbers. Because calls mean business and business means money.</p>
-                    </div>
+                <div
+                        class="text-center bg-gray-300 text-gray-800 py-6 px-2 rounded-md shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:bg-white">
+                    <h3 class="text-xl font-medium">Never let any call go unhandled.</h3>
+                    <p>Get one number that connects to five other numbers. Because calls mean business and business means money.</p>
                 </div>
             </div>
         </div>
     </section>
-    <!--Footer-->
-    <footer class="text-gray-600 body-font">
-        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                <img class="transform scale-50" src="img.png" alt="">
-                <span class="ml-3 text-xl">OneNumber</span>
-            </a>
-            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2021 OneNumber.Africa</p>
-            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-      <a class="text-gray-500">
-        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-        </svg>
-      </a>
-      <a class="ml-3 text-gray-500">
-        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-        </svg>
-      </a>
-      <a class="ml-3 text-gray-500">
-        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-        </svg>
-      </a>
-      <a class="ml-3 text-gray-500">
-        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
-          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-          <circle cx="4" cy="4" r="2" stroke="none"></circle>
-        </svg>
-      </a>
-    </span>
-        </div>
-    </footer>
 
-    <script src='https://c2c.cedarviewng.com/c2c/click2call.js'></script>
-    <script>
-        let sippoUri = 'https://c2c.cedarviewng.com';
-        let target = document.getElementById('target');
-        let config = {
-            call: {
-                localMediaConstraints: {
-                    audio: true,
-                    video: false
-                },
-                remoteMediaTypes: {
-                    audio: true,
-                    video: false
-                }
+    <section class="mt-10 font-nova scroll-mt-10" id="numbersType">
+        <div class="max-w-7xl mx-auto text-black grid grid-cols-12 place-items-center justify-center p-3">
+            <div class="col-span-12 sm:col-span-6">
+                <img class="max-w-full h-auto scale-[.85]" src="Picture1.png" alt="">
+            </div>
+            <div class="col-span-12 sm:col-span-6 flex flex-col space-y-5 p-3">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-6">Unlock the power of a business phone number.
+                </h2>
+                <!-- Accordions -->
+                <div class="" x-data="{ openAccordion1: false }">
+                    <button class="flex justify-between items-center space-x-1 mb-2"
+                            @click="openAccordion1 = ! openAccordion1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                             :class="!openAccordion1 ? '' : 'rotate-90' " fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M9 5l7 7-7 7" />
+                        </svg>
+                        <span class="text-xl">Toll Free Numbers</span>
+                    </button>
+                    <p class="pl-8" x-cloak x-show="openAccordion1" @click.outside="openAccordion1 = false">Great for marketing and a national presence, toll free numbers can make your business sound more professional. We have 833, 844, 855, 866, 877, 888, and true 800 numbers.</p>
+                </div>
+                <div class="" x-data="{ openAccordion2: false }">
+                    <button class="flex justify-between items-center space-x-1 mb-2"
+                            @click="openAccordion2 = ! openAccordion2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                             :class="!openAccordion2 ? '' : 'rotate-90' " fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M9 5l7 7-7 7" />
+                        </svg>
+                        <span class="text-xl">Vanity Numbers</span>
+                    </button>
+                    <p class="pl-8" x-cloak x-show="openAccordion2" @click.outside="openAccordion2 = false">Ever wonder how companies like 234-700-METROFM get their vanity numbers? Easily — and you can too. </p>
+                </div>
+                <div class="" x-data="{ openAccordion3: false }">
+                    <button class="flex justify-between items-center space-x-1 mb-2"
+                            @click="openAccordion3 = ! openAccordion3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                             :class="!openAccordion3 ? '' : 'rotate-90' " fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M9 5l7 7-7 7" />
+                        </svg>
+                        <span class="text-xl">Port your current number</span>
+                    </button>
+                    <p class="pl-8" x-cloak x-show="openAccordion3" @click.outside="openAccordion3 = false">
+                        Already have a business or virtual number you love? Easily transfer it to One Number for free!
+                    </p>
+                </div>
+                <div class="" x-data="{ openAccordion4: false }">
+                    <button class="flex justify-between items-center space-x-1 mb-2"
+                            @click="openAccordion4 = ! openAccordion4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                             :class="!openAccordion4 ? '' : 'rotate-90' " fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M9 5l7 7-7 7" />
+                        </svg>
+                        <span class="text-xl">Local Numbers</span>
+                    </button>
+                    <p class="pl-8" x-cloak x-show="openAccordion4" @click.outside="openAccordion4 = false">Picking a local number creates trust and credibility for a locally run business. Get a local business number in any city of your choice!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="mt-5 font-nova">
+        <div class="max-w-7xl mx-auto px-6 py-3">
+            <h2 class="text-4xl font-bold text-black text-center mb-7">Get started with One Number in 4 easy
+                steps</h2>
+            <div
+                    class="grid grid-cols-1 gap-6 px-16 sm:px-8 md:px-6 justify-center items-center md:grid-cols-4 mt-6">
+                <div
+                        class="h-full flex flex-col items-center justify-center space-y-3 bg-gray-300 text-gray-800 py-6 px-2 rounded-md shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:bg-white">
+                    <h3 class="text-3xl font-bold">1</h3>
+                    <h4 class="text-xl">Select a Number</h4>
+                    <p class="text-center">We have <a href="" class="text-blue-400 hover:text-blue-600">Toll
+                        Free</a>, <a href="" class="text-blue-400 hover:text-blue-600">Vanity</a>, and <a
+                            href="" class="text-blue-400 hover:text-blue-600">Local numbers</a>.
+                        Or, <a href="" class="text-blue-400 hover:text-blue-600">port your current</a> virtual
+                        number!</p>
+                </div>
+                <div
+                        class="h-full flex flex-col items-center justify-center space-y-3 bg-gray-300 text-gray-800 py-6 px-2 rounded-md shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:bg-white">
+                    <h3 class="text-3xl font-bold">2</h3>
+                    <h4 class="text-xl">Choose your Plan</h4>
+                    <p class="text-center">Start a free trial, or select a monthly or annual plan to get going right away.</p>
+                </div>
+                <div
+                        class="h-full flex flex-col items-center justify-center space-y-3 bg-gray-300 text-gray-800 py-6 px-2 rounded-md shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:bg-white">
+                    <h3 class="text-3xl font-bold">3</h3>
+                    <h4 class="text-xl">Download the App</h4>
+                    <p class="text-center">Available for desktop, iOS, and Android.</p>
+                </div>
+                <div
+                        class="h-full flex flex-col items-center justify-center space-y-3 bg-gray-300 text-gray-800 py-6 px-2 rounded-md shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:bg-white">
+                    <h3 class="text-3xl font-bold">4</h3>
+                    <h4 class="text-xl">Call and Text</h4>
+                    <p class="text-center">Link your existing mobile number to start calling and texting right away.</p>
+                </div>
+            </div>
+            <div class="text-center mt-16">
+                <a href=""
+                   class="inline-block w-[200px] md:w-[300px] text-white bg-orange-600 hover:bg-opacity-90 px-2 py-[0.62rem] font-bold text-[1.2222rem] rounded shadow-md">Get
+                    Started Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mt-20 font-nova text-black mb-10">
+        <div class="max-w-xl mx-auto px-6 py-3 flex flex-col items-center justify-center">
+            <h2 class="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
+            <div class="w-full flex flex-col space-y-2 items-start justify-start">
+                <!-- Accordions -->
+                <div class="" x-data="{ openAccordion5: false }">
+                    <button class="space-x-1 mb-2"
+                            @click="openAccordion5 = ! openAccordion5">
+                        <span class="text-md text-blue-500 hover:text-blue-600 text-left">- Is One Number an app ?</span>
+                    </button>
+                    <p class="pl-8" x-cloak x-show="openAccordion5" @click.outside="openAccordion5 = false">The majority of One Number’s features are accessible through the One Number apps (available on iOS, Android, and desktop). One Number can also be used without the app, to forward calls to a landline.</p>
+                </div>
+                <div class="" x-data="{ openAccordion6: false }">
+                    <button class="flex justify-between items-center space-x-1 mb-2"
+                            @click="openAccordion6 = ! openAccordion6">
+                        <span class="text-md text-blue-500 hover:text-blue-600 text-left">- Does One Number replace my service provider ?</span>
+                    </button>
+                    <p class="pl-8" x-cloak x-show="openAccordion6" @click.outside="openAccordion6 = false">No. One Number is a virtual phone system that provides a number of great features, including a second phone number, but you still need a service provider, and a main phone number, where your One Number calls will be forwarded.</p>
+                </div>
+                <div class="" x-data="{ openAccordion7: false }">
+                    <button class="flex justify-between items-center space-x-1 mb-2"
+                            @click="openAccordion7 = ! openAccordion7">
+                        <span class="text-md text-blue-500 hover:text-blue-600 text-left">- What is One Number ?</span>
+                    </button>
+                    <p class="pl-8" x-cloak x-show="openAccordion7" @click.outside="openAccordion7 = false">One Number provides you with a second phone number. One Number is a full virtual phone system (calls, texts, custom greetings, extensions, inbound fax, and more). See how our customers use One Number.</p>
+                </div>
+                <div class="" x-data="{ openAccordion8: false }">
+                    <button class="flex justify-between items-center space-x-1 mb-2"
+                            @click="openAccordion8 = ! openAccordion8">
+                        <span class="text-md text-blue-500 hover:text-blue-600 text-left">- Do I have to pay by the minute ?</span>
+                    </button>
+                    <p class="pl-8" x-cloak x-show="openAccordion8" @click.outside="openAccordion8 = false">All of our plans include unlimited minutes! Your app usage is restricted only by your carrier’s dataplan. </p>
+                </div>
+                <div class="" x-data="{ openAccordion8: false }">
+                    <button class="flex justify-between items-center space-x-1 mb-2"
+                            @click="openAccordion8 = ! openAccordion8">
+                        <span class="text-md text-blue-500 hover:text-blue-600 text-left">- Is One Number a VOIP Phone Service ?</span>
+                    </button>
+                    <p class="pl-8" x-cloak x-show="openAccordion8" @click.outside="openAccordion8 = false">One Number primarily uses your service provider’s cellular network for incoming and outgoing calls. One Number does offer both WiFi and VoIP Calling options, but they are not the default.</p>
+                </div>
+                <div class="" x-data="{ openAccordion8: false }">
+                    <button class="flex justify-between items-center space-x-1 mb-2"
+                            @click="openAccordion8 = ! openAccordion8">
+                        <span class="text-md text-blue-500 hover:text-blue-600 text-left">- How good is One Number's call quality ?</span>
+                    </button>
+                    <p class="pl-8" x-cloak x-show="openAccordion8" @click.outside="openAccordion8 = false">The quality and reliability is the exact same as your service provider, since we use their network for all your calls!</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="divide-y divide-[#ddd] font-nova text-black bg-[#f6f6f6] shadow">
+        <div class="max-w-7xl mx-auto p-10 md:p-20">
+            <div class="flex flex-col space-y-8 md:space-y-0 md:flex-row md:space-x-28 items-start justify-center text-xl text-gray-700">
+                <div>
+                    <h4 class="mb-6 text-[1.1rem] text-gray-400">One Number</h4>
+                    <h3 class="font-bold mb-1.5 text text-gray-500">Get Started</h3>
+                    <ul class="flex flex-col space-y-2">
+                        <li><a href="" class="text-gray-400 text-[14px] hover:text-gray-500">Overview</a></li>
+                        <li><a href="" class="text-gray-400 text-[14px] hover:text-gray-500">How it works</a></li>
+                        <li><a href="" class="text-gray-400 text-[14px] hover:text-gray-500">Customer Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="mb-0 md:mb-6 text-[1.1rem]">&nbsp;</div>
+                    <h3 class="font-bold mb-1.5 text-gray-500">Top Features</h3>
+                    <ul class="flex flex-col space-y-2">
+                        <li><a href="" class="text-gray-400 text-[14px] hover:text-gray-500">Desktop + Mobile Apps</a></li>
+                        <li><a href="" class="text-gray-400 text-[14px] hover:text-gray-500">Business Texting</a></li>
+                        <li><a href="" class="text-gray-400 text-[14px] hover:text-gray-500">Call Forwarding</a></li>
+                        <li><a href="" class="text-gray-400 text-[14px] hover:text-gray-500">Voicemail Transcription</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-6 text-gray-500">Types of Numbers</h4>
+                    <ul class="flex flex-col space-y-2">
+                        <li><a href="" class="text-gray-400 text-[14px] hover:text-gray-500">Toll Free Numbers</a></li>
+                        <li><a href="" class="text-gray-400 text-[14px] hover:text-gray-500">Vanity Numbers</a></li>
+                        <li><a href="" class="text-gray-400 text-[14px] hover:text-gray-500">Local Numbers</a></li>
+                        <li><a href="" class="text-gray-400 text-[14px] hover:text-gray-500">Port your Number</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-col space-y-8 items-start md:items-center justify-center p-10">
+            <ul class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-10 items-start">
+                <li class="mr-10 text-gray-600"><a href="" class="hover:text-orange-900">Contact Us</a></li>
+                <ul class="flex space-x-10 items-start">
+                    <li><a href=""><svg class="stroke-[#666] hover:stroke-orange-900" fill="none" width="19px" height="25px" viewBox="0 0 19 25" xmlns="http://www.w3.org/2000/svg">
+                        <path transform="translate(1, 0)" d="M0,4 C0,2.344 1.344,1 3,1 C4.656,1 6,2.344 6,4 L6,6 L14,6 C15.656,6 17,7.344 17,9 C17,10.657 15.656,12 14,12 L6,12 L6,15 C6,16.657 7.344,18 9,18 L14,18 C15.656,18 17,19.344 17,21 C17,22.657 15.656,24 14,24 L8,24 C3.582,24 0,20.419 0,16 L0,4 Z"></path>
+                    </svg></a></li>
+                    <li><a href=""><svg class="stroke-[#666] hover:stroke-orange-900" fill="none" width="14px" height="25px" viewBox="0 0 14 25" xmlns="http://www.w3.org/2000/svg">
+                        <path transform="translate(-42, 0)" d="M55.268,7.965 L51,7.965 L51,6.06 C51,5.164 51.594,4.955 52.012,4.955 L55,4.955 L55,1.013 L50.671,1 C46.745,1 46,3.939 46,5.82 L46,7.965 L43,7.965 L43,11.965 L46,11.965 L46,23.965 L51,23.965 L51,11.965 L54.851,11.965 L55.268,7.965 Z"></path>
+                    </svg></a></li>
+                    <li><a href=""><svg class="stroke-[#666] hover:stroke-orange-900" fill="none" width="23px" height="22px" viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
+                        <path transform="translate(-80, -2)" d="M95.027,13.893 C93.922,13.893 93.027,14.789 93.027,15.893 L93.027,22.893 L88.027,22.893 C88.027,22.893 88.086,10.893 88.027,9.893 L93.027,9.893 L93.027,11.378 C93.027,11.378 94.575,9.935 96.965,9.935 C99.927,9.935 102.027,12.079 102.027,16.239 L102.027,22.893 L97.027,22.893 L97.027,15.893 C97.027,14.789 96.131,13.893 95.027,13.893 Z M83.517,7.893 L83.488,7.893 C81.977,7.893 81,6.711 81,5.412 C81,4.083 82.007,3 83.547,3 C85.088,3 86.035,4.118 86.065,5.447 C86.065,6.747 85.088,7.893 83.517,7.893 Z M81.027,22.893 L86.027,22.893 L86.027,9.893 L81.027,9.893 L81.027,22.893 Z"></path>
+                    </svg></a></li>
+                    <li>
+                        <a href="">
+                            <svg class="stroke-[#666] hover:stroke-orange-900" fill="none" width="23px" height="24px" viewBox="0 0 23 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.5,18.9385 C22.5,21.1475 20.709,22.9385 18.5,22.9385 L4.5,22.9385 C2.291,22.9385 0.5,21.1475 0.5,18.9385 L0.5,15.9385 C0.5,13.7295 2.291,11.9385 4.5,11.9385 L18.5,11.9385 C20.709,11.9385 22.5,13.7295 22.5,15.9385 L22.5,18.9385 Z"></path>
+                                <polyline points="3.4746 0.5025 6.4996 4.4015 6.5006 8.9405"></polyline>
+                                <polyline points="9.5234 0.5 6.5004 4.401 6.5014 8.94"></polyline>
+                                <path d="M12.501,7.4385 C12.501,8.2665 11.829,8.9385 11.001,8.9385 C10.172,8.9385 9.5,8.2685 9.5,7.4385 L9.5,4.4385 C9.5,3.6105 10.171,2.9385 11,2.9385 C11.828,2.9385 12.5,3.6095 12.5,4.4385 L12.501,7.4385 Z"></path>
+                                <path d="M18.5,2.9361 L18.501,6.9361 C18.501,8.0401 17.605,8.9361 16.501,8.9361 C15.396,8.9371 14.501,8.0421 14.501,6.9371 L14.5,2.9371"></path>
+                                <path d="M18.5,2.9361 L18.501,8.8431"></path>
+                                <path d="M10.5,15.9361 L10.501,19.8431"></path>
+                                <path d="M3.4785,14.9385 L7.5205,14.9385"></path>
+                                <path d="M5.5,14.9385 L5.5,19.9175"></path>
+                                <path d="M12.5,13.9385 L12.5,19.9175"></path>
+                                <path d="M14.5,18.9385 C14.5,19.4905 14.053,19.9385 13.5,19.9385 C12.947,19.9385 12.5,19.4905 12.5,18.9385 L12.5,16.9385 C12.5,16.3865 12.947,15.9385 13.5,15.9385 C14.053,15.9385 14.5,16.3865 14.5,16.9385 L14.5,18.9385 Z"></path>
+                                <path d="M8.5,15.9361 L8.5,18.9381 C8.5,19.4911 8.947,19.9381 9.5,19.9381 C10.053,19.9381 10.5,19.4911 10.5,18.9381 L10.5,15.9361"></path>
+                                <path d="M18.6719,19.1885 C18.6719,19.7415 18.1389,20.0635 17.5859,20.0635 C17.0329,20.0635 16.4999,19.4905 16.4999,18.9385 L16.4999,16.9385 C16.4999,16.3865 16.9469,15.9385 17.4999,15.9385 C18.0529,15.9385 18.4999,16.3865 18.4999,16.9385 L18.4999,17.9385 L16.4999,17.9385"></path>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </ul>
+            <ul class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-10 items-start md:items-center justify-center text-sm">
+                <li class="text-gray-400"><a href="" class="hover:text-gray-600">Terms and Conditions</a></li>
+                <li class="text-gray-400"><a href="" class="hover:text-gray-600">Privacy Policy</a></li>
+                <li class="text-gray-400"><a href="" class="hover:text-gray-600">Sitemap</a></li>
+                <li class="text-gray-400"><a href="" class="hover:text-gray-600">Cookie Preferences</a></li>
+            </ul>
+            <p x-data="" class="text-gray-400 text-sm">Copyright © <span x-text="new Date().getFullYear()"></span> One Number.</p>
+        </div>
+
+    </section>
+</div>
+<div x-data="{ openCall: false }">
+    <button onclick='call()' class="animate-bounce flex items-center space-x-2 fixed right-0 md:right-2 bottom-6 bg-orange-200 p-2 rounded-md font-nova" @click="openCall = ! openCall" x-show="!openCall">
+        <svg class="w-8 fill-blue-800" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" version="1.1">
+            <path d="M15.88 3.86l-0.61-1.31c-0.155-0.326-0.443-0.568-0.792-0.658-1.938-0.528-4.161-0.851-6.453-0.891-2.342 0.041-4.565 0.363-6.687 0.934-0.165 0.048-0.453 0.29-0.605 0.609l-0.613 1.317c-0.075 0.152-0.119 0.331-0.12 0.52v0.87c-0.001 0.012-0.001 0.026-0.001 0.041 0 0.392 0.318 0.71 0.71 0.71 0.011 0 0.022-0 0.033-0.001l2.518 0c0.412-0.010 0.742-0.346 0.742-0.76 0-0.018-0.001-0.035-0.002-0.053l0-0.838c-0-0.004-0-0.008-0-0.012 0-0.229 0.119-0.43 0.298-0.546 0.947-0.508 2.069-0.806 3.26-0.806 0.156 0 0.31 0.005 0.464 0.015 0.122-0.011 0.288-0.017 0.456-0.017 1.178 0 2.287 0.291 3.261 0.805 0.143 0.099 0.262 0.3 0.262 0.529 0 0.004-0 0.009-0 0.013l0 0.859c-0.001 0.015-0.002 0.033-0.002 0.050 0 0.413 0.33 0.75 0.741 0.76l2.521 0c0.009 0 0.020 0.001 0.031 0.001 0.392 0 0.71-0.318 0.71-0.71 0-0.014-0-0.029-0.001-0.043l0-0.868c-0.001-0.189-0.045-0.368-0.123-0.527z"/>
+            <path d="M12 8.3c-0.624-0.797-1.001-1.815-1.001-2.92 0-0.028 0-0.056 0.001-0.084l-0-0.296h-1v1h-4v-1h-1v0.33c0 0.024 0.001 0.052 0.001 0.080 0 1.105-0.377 2.122-1.009 2.93l-2.992 3.66v3h14v-3zM8 13c-1.657 0-3-1.343-3-3s1.343-3 3-3c1.657 0 3 1.343 3 3s-1.343 3-3 3z"/>
+            <path d="M10 10c0 1.105-0.895 2-2 2s-2-0.895-2-2c0-1.105 0.895-2 2-2s2 0.895 2 2z"/>
+        </svg>
+        <span class="hidden md:flex text-orange-900 font-bold">Call Us</span>
+    </button>
+    <div
+            class="flex flex-col justify-around fixed right-0 md:right-2 bottom-20 bg-gray-300 w-[200px] h-[300px]
+                         rounded-xl"
+            x-show="openCall" @click.outside="openCall = false"
+            x-cloak>
+
+        <span class="text-center animate-pulse font-bold">Connecting...</span>
+        <button class="flex items-center justify-center" onclick='hangup()' @click="openCall = false">
+            <svg class="h-10" viewBox="0 0 74 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="37" cy="35.5" rx="37" ry="35.5" fill="red"/>
+                <path d="M23.2571 22.2363C23.2571 21.7189 23.4428 21.2228 23.7732 20.857C24.1036 20.4912 24.5518 20.2857 25.019 20.2857H28.8124C29.2295 20.2859 29.6329 20.4499 29.951 20.7485C30.2692 21.0471 30.4813 21.4609 30.5497 21.9164L31.8535 30.5671C31.9158 30.9791 31.857 31.4023 31.6857 31.7745C31.5144 32.1467 31.2397 32.4482 30.902 32.6346L28.1746 34.1424C29.1527 36.8257 30.6093 39.2632 32.4574 41.3092C34.3055 43.3552 36.5073 44.9678 38.931 46.0505L40.2948 43.0311C40.4631 42.6576 40.7351 42.3538 41.071 42.1642C41.4068 41.9746 41.7887 41.9093 42.1606 41.9778L49.9747 43.4212C50.3861 43.4969 50.7599 43.7317 51.0296 44.0839C51.2993 44.4361 51.4474 44.8827 51.4476 45.3444V49.544C51.4476 50.0613 51.262 50.5574 50.9316 50.9232C50.6011 51.289 50.153 51.4945 49.6857 51.4945H46.1619C33.5114 51.4945 23.2571 40.1423 23.2571 26.1374V22.2363Z" fill="white"/>
+            </svg>
+        </button>
+
+    </div>
+    <div id="target"></div>
+</div>
+
+<!-- Click to Call Scripts -->
+<script src='https://c2c.cedarviewng.com/c2c/click2call.js'></script>
+<script>
+    let sippoUri = 'https://c2c.cedarviewng.com';
+    let target = document.getElementById('target');
+    let config = {
+        call: {
+            localMediaConstraints: {
+                audio: true,
+                video: false
+            },
+            remoteMediaTypes: {
+                audio: true,
+                video: false
             }
         }
-        let c2c = new Click2Call(sippoUri, target, config);
-        function call() {
-            const anonymousDomain = '@quobis';
-            const dest = '019065400'
-            c2c.register(anonymousDomain).then( () => {
-                c2c.call(dest).catch( (error) => {
-                    console.error('Error calling');
-                    console.error(error);
-                });
+    }
+    let c2c = new Click2Call(sippoUri, target, config);
+    function call() {
+        const anonymousDomain = '@quobis';
+        const dest = '019065400'
+        c2c.register(anonymousDomain).then( () => {
+            c2c.call(dest).catch( (error) => {
+                console.error('Error calling');
+                console.error(error);
             });
-        }
-        function hangup() {
-            c2c.hangup().then( () => c2c.deregister());
-        }
-    </script>
+        });
+    }
+    function hangup() {
+        c2c.hangup().then( () => c2c.deregister());
+    }
+</script>
 </body>
+
 </html>
